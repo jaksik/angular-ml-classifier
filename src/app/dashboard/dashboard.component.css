@@ -1,0 +1,17 @@
+h2 {
+    text-align: center;
+}
+
+#dashboard {
+    display: flex;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.dash-module {
+    width: 50%;
+    border: 3px solid black;
+    margin: 5px 5px 0px;
+    background: lightgray;
+    padding: 10px;
+}
