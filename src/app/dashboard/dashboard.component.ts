@@ -28,8 +28,29 @@ export class DashboardComponent implements OnInit {
     outputData: any;
     model: any;
     angular: any;
+    r: any;
+    g: any;
+    b: any;
 
     constructor() { }
+
+      hello(value) {
+          console.log("hello: ", value.target.value)
+          console.log("hello: ", value.target.name)
+
+          switch(value.target.name) {
+            case "r":
+                this.r=value.target.value;
+                break;
+            case "g":
+                this.g=value.target.value;
+                break;
+            case "b":
+                this.b=value.target.value;
+                break;
+          }
+
+      }
 
     ngOnInit() {
         //Prepare/restructure data to pass into neural network
@@ -87,7 +108,8 @@ export class DashboardComponent implements OnInit {
                 onBatchEnd: tf.nextFrame,
                 onEpochEnd: (num, logs) => {
                     console.log('Epoch: ' + num);
-                    console.log('Loss: ' + logs)
+                    console.log('Loss: ' + logs);
+                    this.draw();
                 }
             }
         }
@@ -97,13 +119,15 @@ export class DashboardComponent implements OnInit {
     draw() {
         tf.tidy(() => {
             const xs = tf.tensor2d([
-                [125 / 255, 124 / 255, 124 / 255]
+                [this.r / 255, this.g / 255, this.b / 255]
             ]);
-            let results = this.model.predict(this.inputData);
+            let results = this.model.predict(xs);
             let index = results.argMax(1).dataSync()[0];
 
             this.label = this.labelList[index];
             console.log("prediction: ", this.label)
         });
       }
+
+    
 }
