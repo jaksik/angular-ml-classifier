@@ -1,5 +1,5 @@
 {
-  "name": "angurlar-practice",
+  "name": "angular-ml-color-classifier",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

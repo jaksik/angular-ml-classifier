@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+}
+
+#dashboard {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.dash-module {
+    border: 3px solid black;
+    margin: 5px 5px 0px;
+    background: lightgray;
+    padding: 10px;
+}
+
+.container {
+    max-width: 576px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.module {
+    float: left;
+}
+
+#train-button {
+    width: 20%;
+    margin: 0 auto;
+}
+
+#slider-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.slider {
+    width: 100%;
+}
+
+#canvas {
+    width: 30%;
+    height: 300px;
+}
+
+@media only screen and (max-width: 576px) {
+    #slider-container {
+        width: 70%;
+    }
+}

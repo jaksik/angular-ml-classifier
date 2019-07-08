@@ -1,11 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-dashboard></app-dashboard>
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+    <h1>
+      {{ title }}!
+    </h1>
 </div>
 
+<div [ngClass]="['container']">
 
+  <div id="dashboard">
+    <div [ngClass]="['dash-module']">
+        <h1>Console</h1>
+        <button (click)="draw()" id="train-button">Train</button>
+    </div>
+  </div>  
+
+
+  <div [ngClass]="['module']" id="slider-container">
+      <p>R Value: <strong><span id="rValue"></span></strong></p>
+      <input (change)="hello($event)" name="r" type="range" min="0" max="255" value="127.5" [ngClass]="['slider']" id="rSlider">
+      <p>G Value: <strong><span id="gValue"></span></strong></p>
+      <input (change)="hello($event)" name="g" type="range" min="0" max="255" value="127.5" [ngClass]="['slider']" id="gSlider">
+      <p>B Value: <strong><span id="bValue"></span></strong></p>
+      <input (change)="hello($event)" name="b" type="range" min="0" max="255" value="127.5" [ngClass]="['slider']" id="bSlider">
+  </div>
+
+  <div [ngClass]="['module']" id="canvas"></div>
+
+</div>
+
+<h4>Computer's prediction of color name: <span id="prediction"></span></h4>
 
 <router-outlet></router-outlet>
+
+
