@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ColorPickerModule } from './color-picker/color-picker.module';
+import { ConsoleModule } from './console/console.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ColorPickerModule,
+    ConsoleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
